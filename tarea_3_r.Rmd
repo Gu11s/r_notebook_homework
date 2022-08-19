@@ -25,6 +25,12 @@ dataset_results %>%
   select(party, candidate, votes) %>%
   arrange(desc(votes))
 ```
+```{r}
+dataset_results %>%
+  filter(state == "Alaska" & candidate == "Ted Cruz" & party == "Republican") %>%
+  mutate(vote_count = votes/fraction_votes) %>%
+  arrange(desc(vote_count))
+```
 
 
 
