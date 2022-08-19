@@ -19,6 +19,12 @@ dataset_results %>%
 dataset_results %>% 
   filter(state == "Alabama" & votes > 15000)
 ```
+```{r}
+dataset_results %>%
+  filter(state == "Texas" & county == "Denton") %>%
+  select(party, candidate, votes) %>%
+  arrange(desc(votes))
+```
 
 
 
