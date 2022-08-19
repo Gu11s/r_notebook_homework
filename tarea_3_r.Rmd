@@ -1,0 +1,24 @@
+
+```{r}
+library("dplyr")
+
+dataset_results <- read.csv("primary_results.csv")
+
+dataset_results %>%
+  filter(state == "Florida")
+```
+```{r}
+dataset_results %>%
+  filter(candidate == "Hillary Clinton" | candidate == "Donald Trump")
+```
+```{r}
+dataset_results %>%
+  filter(party == "Democrat" & county == "Shelby")
+```
+```{r}
+dataset_results %>% 
+  filter(state == "Alabama" & votes > 15000)
+```
+
+
+
