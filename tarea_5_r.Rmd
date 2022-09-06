@@ -1,3 +1,11 @@
 Gustavo Javier Garcia Salas Rodriguez
 999007128
+```{r}
+library(tidyverse)
+
+questions <- read.csv("questions.csv")
+answers <- read.csv("answers.csv")
+tags <- read.csv("tags.csv")
+question_tags <- read.csv("question_tags.csv")
+```
 
