@@ -7,5 +7,10 @@ questions <- read.csv("questions.csv")
 answers <- read.csv("answers.csv")
 tags <- read.csv("tags.csv")
 question_tags <- read.csv("question_tags.csv")
-```
 
+#1
+questions_with_tags <- left_join(question_tags, questions, by = c("question_id" = "id"))
+questions_with_tags <- left_join(questions_with_tags, tags, by = c("question_id" = "id"))
+questions_with_tags %>%
+  replace_na(list(tag_name="only-r"))
+```
