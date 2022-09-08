@@ -34,4 +34,16 @@ questions %>%
   inner_join(answers, by = c("id" = "question_id"), suffix=c("_question", "_answer")) %>%
   mutate(gap = as.Date(creation_date_answer) - as.Date(creation_date_question))
 ```
+```{r}
+#4
+
+answer_counts <- answers %>%
+  count(question_id)
+answer_counts
+
+question_answer_counts <- questions %>%
+  left_join(answer_counts, by = c("id" = "question_id")) %>%
+  replace_na(list(n = 0))
+question_answer_counts
+```
 
