@@ -24,3 +24,14 @@ questions_with_tags %>%
   summarize(mean_score = sum(score)) %>%
   arrange(desc(mean_score))
 ```
+```{r}
+#3
+
+questions
+answers
+
+questions %>%
+  inner_join(answers, by = c("id" = "question_id"), suffix=c("_question", "_answer")) %>%
+  mutate(gap = as.Date(creation_date_answer) - as.Date(creation_date_question))
+```
+
