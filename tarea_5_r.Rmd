@@ -46,4 +46,11 @@ question_answer_counts <- questions %>%
   replace_na(list(n = 0))
 question_answer_counts
 ```
+```{r}
+#5
+
+question_tags %>%
+  inner_join(question_answer_counts, by = c("question_id" = "id")) %>%
+    inner_join(tags, by = c("tag_id" = "id"))
+```
 
